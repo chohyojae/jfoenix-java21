@@ -59,7 +59,7 @@ public class JFXTextFieldSkin<T extends TextField & IFXLabelFloatControl> extend
       textPane = (Pane) this.getChildren().get(0);
 
       // get parent fields
-      textNode = ReflectionHelper.getFieldContent(TextFieldSkin.class, this, "textNode");
+
       textTranslateX = ReflectionHelper.getFieldContent(TextFieldSkin.class, this, "textTranslateX");
       textRight = ReflectionHelper.getFieldContent(TextFieldSkin.class, this, "textRight");
 
@@ -107,6 +107,9 @@ public class JFXTextFieldSkin<T extends TextField & IFXLabelFloatControl> extend
 
    private void updateTextPos()
    {
+      if (textNode == null)
+         textNode = getNode().lookup(".text");
+
       double textWidth = textNode.getLayoutBounds().getWidth();
       final double promptWidth = promptText == null ? 0 : promptText.getLayoutBounds().getWidth();
       switch (getSkinnable().getAlignment().getHpos())
