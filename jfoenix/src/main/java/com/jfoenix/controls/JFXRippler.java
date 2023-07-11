@@ -19,14 +19,32 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.jfoenix.converters.RipplerMaskTypeConverter;
 import com.jfoenix.utils.JFXNodeUtils;
-import javafx.animation.*;
+
+import javafx.animation.Animation;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.beans.DefaultProperty;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.css.*;
+import javafx.css.CssMetaData;
+import javafx.css.SimpleStyleableBooleanProperty;
+import javafx.css.SimpleStyleableObjectProperty;
+import javafx.css.Styleable;
+import javafx.css.StyleableBooleanProperty;
+import javafx.css.StyleableObjectProperty;
+import javafx.css.StyleableProperty;
 import javafx.css.converter.BooleanConverter;
 import javafx.css.converter.PaintConverter;
 import javafx.css.converter.SizeConverter;
@@ -34,7 +52,6 @@ import javafx.geometry.Bounds;
 import javafx.scene.CacheHint;
 import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
@@ -45,9 +62,6 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.util.Duration;
-
-import java.util.*;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * JFXRippler is the material design implementation of a ripple effect. the ripple effect can be

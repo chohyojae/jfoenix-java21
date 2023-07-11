@@ -19,18 +19,29 @@
 
 package com.jfoenix.controls;
 
-import com.jfoenix.assets.JFoenixResources;
-import com.jfoenix.controls.base.IFXValidatableControl;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.jfoenix.adapters.ReflectionHelper;
 import com.jfoenix.assets.JFoenixResources;
+import com.jfoenix.controls.base.IFXValidatableControl;
 import com.jfoenix.skins.JFXDatePickerSkin;
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ObservableList;
-import javafx.css.*;
+import javafx.css.CssMetaData;
+import javafx.css.SimpleStyleableBooleanProperty;
+import javafx.css.SimpleStyleableObjectProperty;
+import javafx.css.Styleable;
+import javafx.css.StyleableBooleanProperty;
+import javafx.css.StyleableObjectProperty;
+import javafx.css.StyleableProperty;
 import javafx.css.converter.BooleanConverter;
 import javafx.css.converter.PaintConverter;
 import javafx.scene.control.DatePicker;
@@ -39,12 +50,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
-
-import java.lang.reflect.Field;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * JFXDatePicker is the material design implementation of a date picker.

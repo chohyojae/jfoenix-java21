@@ -19,7 +19,12 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import com.jfoenix.transitions.CachedTransition;
+
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -40,10 +45,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.util.Duration;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * A JFXMasonryPane implements asymmetrical grid layoutMode, it places the child nodes according to

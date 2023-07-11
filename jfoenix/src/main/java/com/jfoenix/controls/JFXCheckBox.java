@@ -19,19 +19,26 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.skins.JFXCheckBoxSkin;
-import javafx.css.*;
+
+import javafx.css.CssMetaData;
+import javafx.css.SimpleStyleableBooleanProperty;
+import javafx.css.SimpleStyleableObjectProperty;
+import javafx.css.Styleable;
+import javafx.css.StyleableBooleanProperty;
+import javafx.css.StyleableObjectProperty;
+import javafx.css.StyleableProperty;
 import javafx.css.converter.BooleanConverter;
 import javafx.css.converter.PaintConverter;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Skin;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * JFXCheckBox is the material design implementation of a checkbox. it shows ripple effect and a

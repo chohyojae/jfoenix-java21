@@ -19,17 +19,18 @@
 
 package com.jfoenix.bindings;
 
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.function.Consumer;
+
 import com.jfoenix.bindings.base.IBiBinder;
 import com.jfoenix.bindings.base.IPropertyConverter;
+
 import javafx.beans.property.Property;
 import javafx.beans.property.ReadOnlyProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.util.Callback;
-
-import java.lang.ref.WeakReference;
-import java.util.HashMap;
-import java.util.function.Consumer;
 
 /**
  * Custom bidirectional binder, used for bidirectional binding between properties of different types

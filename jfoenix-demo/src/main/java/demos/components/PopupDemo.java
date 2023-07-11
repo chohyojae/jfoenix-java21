@@ -11,7 +11,6 @@ import com.jfoenix.controls.JFXRippler.RipplerMask;
 import com.jfoenix.controls.JFXRippler.RipplerPos;
 
 import demos.ApplicationNoModule;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;

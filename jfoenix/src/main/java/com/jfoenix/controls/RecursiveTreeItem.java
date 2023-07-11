@@ -19,8 +19,14 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.function.Predicate;
+
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import com.jfoenix.utils.JFXUtilities;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
@@ -30,11 +36,6 @@ import javafx.collections.transformation.FilteredList;
 import javafx.scene.Node;
 import javafx.scene.control.TreeItem;
 import javafx.util.Callback;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.function.Predicate;
 
 /**
  * RecursiveTreeItem is used along with RecursiveTreeObject to build the data model for the

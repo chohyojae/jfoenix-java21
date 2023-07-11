@@ -20,6 +20,7 @@
 package com.jfoenix.validation;
 
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.beans.DefaultProperty;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;

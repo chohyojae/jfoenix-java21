@@ -21,6 +21,7 @@ package com.jfoenix.controls;
 
 import com.jfoenix.controls.base.IFXValidatableControl;
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;

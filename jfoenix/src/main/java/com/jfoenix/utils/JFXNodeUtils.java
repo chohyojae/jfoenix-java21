@@ -19,6 +19,10 @@
 
 package com.jfoenix.utils;
 
+import java.util.Locale;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+
 import javafx.animation.PauseTransition;
 import javafx.beans.InvalidationListener;
 import javafx.beans.value.ObservableValue;
@@ -33,10 +37,6 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.util.Duration;
-
-import java.util.Locale;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 /**
  * @author Shadi Shaheen

@@ -19,6 +19,8 @@
 
 package com.jfoenix.skins;
 
+import java.util.List;
+
 import com.jfoenix.controls.JFXAutoCompletePopup;
 import com.jfoenix.controls.JFXChip;
 import com.jfoenix.controls.JFXChipView;
@@ -27,6 +29,7 @@ import com.sun.javafx.scene.control.behavior.BehaviorBase;
 import com.sun.javafx.scene.control.behavior.FocusTraversalInputMap;
 import com.sun.javafx.scene.control.inputmap.InputMap;
 import com.sun.javafx.scene.traversal.Direction;
+
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.WeakListChangeListener;
@@ -48,8 +51,6 @@ import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 import javafx.stage.Window;
 import javafx.util.StringConverter;
-
-import java.util.List;
 
 /**
  * JFXChipArea is the material design implementation of chip Input. An easy way to manage chips in a

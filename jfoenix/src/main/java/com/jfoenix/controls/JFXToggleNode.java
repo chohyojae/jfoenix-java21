@@ -19,20 +19,27 @@
 
 package com.jfoenix.controls;
 
-import com.jfoenix.assets.JFoenixResources;
-import com.jfoenix.skins.JFXToggleNodeSkin;
-import javafx.beans.DefaultProperty;
-import javafx.css.*;
-import javafx.css.converter.BooleanConverter;
-import javafx.scene.Node;
-import javafx.css.converter.ColorConverter;
-import javafx.scene.control.Skin;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.paint.Color;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import com.jfoenix.assets.JFoenixResources;
+import com.jfoenix.skins.JFXToggleNodeSkin;
+
+import javafx.beans.DefaultProperty;
+import javafx.css.CssMetaData;
+import javafx.css.SimpleStyleableBooleanProperty;
+import javafx.css.SimpleStyleableObjectProperty;
+import javafx.css.Styleable;
+import javafx.css.StyleableBooleanProperty;
+import javafx.css.StyleableObjectProperty;
+import javafx.css.StyleableProperty;
+import javafx.css.converter.BooleanConverter;
+import javafx.css.converter.ColorConverter;
+import javafx.scene.Node;
+import javafx.scene.control.Skin;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.paint.Color;
 
 /**
  * JFX Toggle Node , allows any node set as its graphic to be toggled not that JFXToggleNode

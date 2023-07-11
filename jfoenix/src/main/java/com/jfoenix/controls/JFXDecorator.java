@@ -19,7 +19,11 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.jfoenix.svg.SVGGlyph;
+
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -60,9 +64,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 import javafx.util.Duration;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Window Decorator allow to resize/move its content Note: the default close button will call

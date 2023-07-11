@@ -19,6 +19,14 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
+
 import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.cache.CachePolicy;
 import com.jfoenix.controls.events.JFXDrawerEvent;
@@ -26,6 +34,7 @@ import com.jfoenix.transitions.JFXAnimationTimer;
 import com.jfoenix.transitions.JFXDrawerKeyValue;
 import com.jfoenix.transitions.JFXKeyFrame;
 import com.jfoenix.transitions.JFXKeyValue;
+
 import javafx.animation.Interpolator;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
@@ -60,14 +69,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Callback;
 import javafx.util.Duration;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Supplier;
 
 /**
  * JFXDrawer is material design implementation of drawer. the drawer has two main nodes, the content

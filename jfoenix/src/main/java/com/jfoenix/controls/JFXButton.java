@@ -19,21 +19,28 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.converters.ButtonTypeConverter;
 import com.jfoenix.skins.JFXButtonSkin;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.css.*;
+import javafx.css.CssMetaData;
+import javafx.css.SimpleStyleableBooleanProperty;
+import javafx.css.SimpleStyleableObjectProperty;
+import javafx.css.Styleable;
+import javafx.css.StyleableBooleanProperty;
+import javafx.css.StyleableObjectProperty;
+import javafx.css.StyleableProperty;
 import javafx.css.converter.BooleanConverter;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Skin;
 import javafx.scene.paint.Paint;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * JFXButton is the material design implementation of a button. it contains ripple effect , the

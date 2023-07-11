@@ -19,11 +19,10 @@
 
 package com.jfoenix.utils;
 
-import javafx.application.Platform;
-
-import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.function.Function;
+
+import javafx.application.Platform;
 
 /**
  * <h1>JavaFX FX Thread utilities</h1> JFXUtilities allow sync mechanism to the FX thread

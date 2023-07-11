@@ -19,11 +19,19 @@
 
 package com.jfoenix.skins;
 
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Function;
+
 import com.jfoenix.adapters.ReflectionHelper;
 import com.jfoenix.controls.behavior.JFXGenericPickerBehavior;
 import com.sun.javafx.binding.ExpressionHelper;
 import com.sun.javafx.event.EventHandlerManager;
 import com.sun.javafx.stage.WindowEventDispatcher;
+
 import javafx.beans.property.ReadOnlyBooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.event.EventHandler;
@@ -36,13 +44,6 @@ import javafx.scene.control.skin.ComboBoxPopupControl;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Window;
-
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 public abstract class JFXGenericPickerSkin<T> extends ComboBoxPopupControl<T>
 {

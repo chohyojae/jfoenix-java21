@@ -19,23 +19,6 @@
 
 package com.jfoenix.controls;
 
-import com.jfoenix.assets.JFoenixResources;
-import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
-import com.jfoenix.skins.JFXTreeTableViewSkin;
-import com.jfoenix.utils.JFXUtilities;
-import javafx.application.Platform;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.control.Skin;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeTableColumn;
-import javafx.scene.control.TreeTableView;
-import javafx.scene.input.MouseEvent;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -49,6 +32,24 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.BiConsumer;
 import java.util.function.Predicate;
+
+import com.jfoenix.assets.JFoenixResources;
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import com.jfoenix.skins.JFXTreeTableViewSkin;
+import com.jfoenix.utils.JFXUtilities;
+
+import javafx.application.Platform;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.Skin;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeTableColumn;
+import javafx.scene.control.TreeTableView;
+import javafx.scene.input.MouseEvent;
 
 /**
  * JFXTreeTableView is the material design implementation of table view.

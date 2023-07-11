@@ -19,8 +19,12 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.jfoenix.cache.CachePolicy;
 import com.jfoenix.utils.JFXNodeUtils;
+
 import javafx.beans.DefaultProperty;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -30,9 +34,6 @@ import javafx.scene.Node;
 import javafx.scene.layout.Region;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * DrawersStack is used to show multiple drawers at once

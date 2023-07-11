@@ -19,8 +19,13 @@
 
 package com.jfoenix.controls;
 
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+import java.util.function.Function;
+
 import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.skins.JFXChipViewSkin;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -33,10 +38,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Skin;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-
-import java.util.function.BiFunction;
-import java.util.function.BiPredicate;
-import java.util.function.Function;
 
 /**
  * JFXChipArea is the material design implementation of chip Input. An easy way to manage chips in a

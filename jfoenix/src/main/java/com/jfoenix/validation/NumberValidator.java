@@ -19,16 +19,17 @@
 
 package com.jfoenix.validation;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.ParsePosition;
+
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.beans.DefaultProperty;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputControl;
 import javafx.util.converter.NumberStringConverter;
-
-import java.text.NumberFormat;
-import java.text.ParseException;
-import java.text.ParsePosition;
 
 /**
  * An example of Number field validation, that is applied on text input controls such as

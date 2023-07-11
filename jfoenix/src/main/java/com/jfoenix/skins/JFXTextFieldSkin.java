@@ -19,8 +19,11 @@
 
 package com.jfoenix.skins;
 
+import java.lang.reflect.Field;
+
 import com.jfoenix.adapters.ReflectionHelper;
 import com.jfoenix.controls.base.IFXLabelFloatControl;
+
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.value.ObservableDoubleValue;
 import javafx.scene.Node;
@@ -28,8 +31,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.skin.TextFieldSkin;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-
-import java.lang.reflect.Field;
 
 /**
  * <h1>Material Design Text input control Skin, used for both JFXTextField/JFXPasswordField</h1>

@@ -62,8 +62,7 @@ public class DatePickerDemo extends ApplicationNoModule
 
       final Scene scene = new Scene(pane, 400, 700);
       final ObservableList<String> stylesheets = scene.getStylesheets();
-      stylesheets.addAll(JFoenixResources.load("css/jfoenix-fonts.css").toExternalForm(),
-                         JFoenixResources.load("css/jfoenix-design.css").toExternalForm());
+      stylesheets.addAll(JFoenixResources.load("css/jfoenix-fonts.css").toExternalForm(), JFoenixResources.load("css/jfoenix-design.css").toExternalForm());
       stage.setTitle("JFX Date Picker Demo");
       stage.setScene(scene);
       stage.show();

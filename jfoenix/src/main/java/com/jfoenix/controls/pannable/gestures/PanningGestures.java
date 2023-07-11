@@ -20,6 +20,7 @@
 package com.jfoenix.controls.pannable.gestures;
 
 import com.jfoenix.controls.pannable.base.IPannablePane;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleBooleanProperty;

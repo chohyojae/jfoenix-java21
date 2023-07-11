@@ -19,9 +19,15 @@
 
 package com.jfoenix.controls.cells.editors.base;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.cells.editors.TextFieldEditorBuilder;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+
 import javafx.beans.value.ChangeListener;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -30,11 +36,6 @@ import javafx.scene.control.TreeTableColumn;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Region;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.BiFunction;
-import java.util.function.Consumer;
 
 /**
  * <h1>Generic Editable Tree Table cell</h1> Provides the base for an editable table cell using a

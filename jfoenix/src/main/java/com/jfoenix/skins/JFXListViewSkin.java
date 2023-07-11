@@ -21,8 +21,7 @@ package com.jfoenix.skins;
 
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.effects.JFXDepthManager;
-import javafx.application.Platform;
-import javafx.collections.ListChangeListener.Change;
+
 import javafx.scene.control.ListCell;
 import javafx.scene.control.skin.ListViewSkin;
 import javafx.scene.control.skin.VirtualFlow;

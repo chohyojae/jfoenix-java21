@@ -19,8 +19,13 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.skins.JFXSpinnerSkin;
+
 import javafx.css.CssMetaData;
 import javafx.css.SimpleStyleableDoubleProperty;
 import javafx.css.Styleable;
@@ -29,10 +34,6 @@ import javafx.css.converter.SizeConverter;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Skin;
 import javafx.scene.layout.Region;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * JFXSpinner is the material design implementation of a loading spinner.

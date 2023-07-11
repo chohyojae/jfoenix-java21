@@ -19,10 +19,15 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.jfoenix.controls.events.JFXDialogEvent;
 import com.jfoenix.converters.DialogTransitionConverter;
 import com.jfoenix.effects.JFXDepthManager;
 import com.jfoenix.transitions.CachedTransition;
+
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -43,7 +48,6 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.CacheHint;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
@@ -55,10 +59,6 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Note: for JFXDialog to work properly, the root node <b>MUST</b> be of type {@link StackPane}

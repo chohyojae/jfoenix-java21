@@ -19,11 +19,11 @@
 
 package com.jfoenix.transitions;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import javafx.scene.CacheHint;
 import javafx.scene.Node;
 import javafx.scene.layout.Region;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CacheMemento
 {

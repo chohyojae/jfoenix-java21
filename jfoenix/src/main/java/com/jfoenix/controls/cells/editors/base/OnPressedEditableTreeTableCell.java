@@ -19,9 +19,9 @@
 
 package com.jfoenix.controls.cells.editors.base;
 
-import javafx.scene.input.MouseEvent;
-
 import java.util.function.Consumer;
+
+import javafx.scene.input.MouseEvent;
 
 public class OnPressedEditableTreeTableCell<S, T> extends GenericEditableTreeTableCell<S, T>
 {

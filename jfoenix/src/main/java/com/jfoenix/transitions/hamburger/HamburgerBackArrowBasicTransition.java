@@ -21,6 +21,7 @@ package com.jfoenix.transitions.hamburger;
 
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.CachedTransition;
+
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;

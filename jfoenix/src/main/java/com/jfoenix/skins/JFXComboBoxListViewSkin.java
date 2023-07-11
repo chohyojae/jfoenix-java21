@@ -19,25 +19,24 @@
 
 package com.jfoenix.skins;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.jfoenix.controls.JFXComboBox;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.css.CssMetaData;
 import javafx.css.Styleable;
 import javafx.css.StyleableObjectProperty;
 import javafx.css.StyleableProperty;
 import javafx.css.converter.PaintConverter;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.skin.ComboBoxListViewSkin;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * <h1>Material Design ComboBox Skin</h1>

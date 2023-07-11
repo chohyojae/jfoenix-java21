@@ -19,9 +19,15 @@
 
 package com.jfoenix.validation.base;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.function.Supplier;
+
 import com.jfoenix.controls.JFXTooltip;
 import com.jfoenix.validation.RegexValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyBooleanProperty;
 import javafx.beans.property.ReadOnlyBooleanWrapper;
@@ -32,11 +38,6 @@ import javafx.css.PseudoClass;
 import javafx.scene.Node;
 import javafx.scene.control.Control;
 import javafx.scene.control.Tooltip;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.function.Supplier;
 
 /**
  * An abstract class that defines the basic validation functionality for a certain control.

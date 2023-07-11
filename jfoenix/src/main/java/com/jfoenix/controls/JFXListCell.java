@@ -19,8 +19,11 @@
 
 package com.jfoenix.controls;
 
+import java.util.Set;
+
 import com.jfoenix.svg.SVGGlyph;
 import com.jfoenix.utils.JFXNodeUtils;
+
 import javafx.animation.Animation.Status;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -44,8 +47,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.util.Duration;
-
-import java.util.Set;
 
 /**
  * material design implementation of ListCell

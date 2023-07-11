@@ -19,11 +19,16 @@
 
 package com.jfoenix.skins;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.jfoenix.controls.JFXClippedPane;
 import com.jfoenix.controls.JFXColorPicker;
 import com.jfoenix.controls.JFXRippler;
 import com.jfoenix.effects.JFXDepthManager;
 import com.jfoenix.utils.JFXNodeUtils;
+
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -46,10 +51,6 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @author Shadi Shaheen

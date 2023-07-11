@@ -21,6 +21,7 @@ package com.jfoenix.animation.alert;
 
 import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.transitions.CachedTransition;
+
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;

@@ -20,6 +20,7 @@
 package com.jfoenix.controls.behavior;
 
 import com.sun.javafx.scene.control.behavior.ComboBoxBaseBehavior;
+
 import javafx.scene.control.ComboBoxBase;
 import javafx.scene.control.PopupControl;
 

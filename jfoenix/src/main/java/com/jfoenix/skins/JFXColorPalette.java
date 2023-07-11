@@ -19,9 +19,12 @@
 
 package com.jfoenix.skins;
 
+import java.util.List;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXColorPicker;
 import com.jfoenix.utils.JFXNodeUtils;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener.Change;
 import javafx.collections.ObservableList;
@@ -52,8 +55,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
-
-import java.util.List;
 
 /**
  * @author Shadi Shaheen FUTURE WORK: this UI will get re-designed to match material design

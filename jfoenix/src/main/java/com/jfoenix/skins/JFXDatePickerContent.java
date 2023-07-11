@@ -19,6 +19,24 @@
 
 package com.jfoenix.skins;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+import static java.time.temporal.ChronoUnit.MONTHS;
+import static java.time.temporal.ChronoUnit.WEEKS;
+import static java.time.temporal.ChronoUnit.YEARS;
+
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.time.YearMonth;
+import java.time.chrono.ChronoLocalDate;
+import java.time.chrono.Chronology;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DecimalStyle;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.WeekFields;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
 import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
@@ -26,8 +44,14 @@ import com.jfoenix.controls.JFXListCell;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.svg.SVGGlyph;
 import com.jfoenix.transitions.CachedTransition;
+
 import javafx.animation.Animation.Status;
-import javafx.animation.*;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.ParallelTransition;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.css.PseudoClass;
@@ -43,27 +67,25 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
-
-import java.time.DateTimeException;
-import java.time.LocalDate;
-import java.time.YearMonth;
-import java.time.chrono.ChronoLocalDate;
-import java.time.chrono.Chronology;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DecimalStyle;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.WeekFields;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
-import static java.time.temporal.ChronoUnit.*;
 
 /**
  * @author Shadi Shaheen

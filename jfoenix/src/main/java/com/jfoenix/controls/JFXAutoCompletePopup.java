@@ -19,9 +19,15 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.Predicate;
+
 import com.jfoenix.controls.events.JFXAutoCompleteEvent;
 import com.jfoenix.skins.JFXAutoCompletePopupSkin;
 import com.sun.javafx.stage.PopupWindowHelper;
+
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
@@ -29,7 +35,11 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
-import javafx.css.*;
+import javafx.css.CssMetaData;
+import javafx.css.SimpleStyleableDoubleProperty;
+import javafx.css.SimpleStyleableIntegerProperty;
+import javafx.css.Styleable;
+import javafx.css.StyleableProperty;
 import javafx.css.converter.SizeConverter;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -40,11 +50,6 @@ import javafx.scene.control.Skin;
 import javafx.scene.layout.Region;
 import javafx.stage.Window;
 import javafx.util.Callback;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.function.Predicate;
 
 /**
  * JFXAutoCompletePopup is an animated popup list view that allow filtering suggestions according to

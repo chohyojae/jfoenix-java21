@@ -22,12 +22,21 @@ package com.jfoenix.skins;
 import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.utils.JFXNodeUtils;
 import com.sun.javafx.scene.NodeHelper;
-import javafx.animation.*;
+
+import javafx.animation.Animation;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.skin.ProgressIndicatorSkin;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
@@ -64,10 +73,10 @@ public class JFXProgressBarSkin extends ProgressIndicatorSkin
       registerChangeListener(bar.parentProperty(), obs -> updateAnimation());
       registerChangeListener(bar.sceneProperty(), obs -> updateAnimation());
 
-//      unregisterChangeListeners(NodeHelper.treeShowingProperty(bar));
+      //      unregisterChangeListeners(NodeHelper.treeShowingProperty(bar));
       unregisterChangeListeners(bar.indeterminateProperty());
 
-//      registerChangeListener(NodeHelper.treeShowingProperty(bar), obs -> this.updateAnimation());
+      //      registerChangeListener(NodeHelper.treeShowingProperty(bar), obs -> this.updateAnimation());
       registerChangeListener(bar.indeterminateProperty(), obs -> initialize());
 
       initialize();

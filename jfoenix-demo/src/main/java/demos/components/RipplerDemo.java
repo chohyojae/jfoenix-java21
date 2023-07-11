@@ -4,7 +4,6 @@ import com.jfoenix.controls.JFXRippler;
 import com.jfoenix.effects.JFXDepthManager;
 
 import demos.ApplicationNoModule;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;

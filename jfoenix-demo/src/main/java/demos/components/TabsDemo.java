@@ -8,7 +8,6 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTabPane;
 
 import demos.ApplicationNoModule;
-import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;

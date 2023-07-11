@@ -19,17 +19,16 @@
 
 package com.jfoenix.controls;
 
+import java.util.List;
+
 import com.jfoenix.assets.JFoenixResources;
+
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-
-import java.util.List;
-
-import com.jfoenix.assets.JFoenixResources;
 
 /**
  * Default dialog layout according to material design guidelines.

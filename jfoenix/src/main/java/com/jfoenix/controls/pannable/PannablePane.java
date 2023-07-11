@@ -21,6 +21,7 @@ package com.jfoenix.controls.pannable;
 
 import com.jfoenix.controls.pannable.base.IPannablePane;
 import com.jfoenix.controls.pannable.gestures.PanningGestures;
+
 import javafx.beans.property.DoubleProperty;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;

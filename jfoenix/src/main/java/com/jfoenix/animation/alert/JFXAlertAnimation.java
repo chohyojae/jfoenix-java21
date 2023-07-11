@@ -19,8 +19,11 @@
 
 package com.jfoenix.animation.alert;
 
+import java.util.function.Function;
+
 import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.transitions.CachedTransition;
+
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -29,8 +32,6 @@ import javafx.animation.Timeline;
 import javafx.animation.Transition;
 import javafx.scene.Node;
 import javafx.util.Duration;
-
-import java.util.function.Function;
 
 /**
  * JFXAlertAnimation object is used to to create showing/hiding animation for {@link JFXAlert}

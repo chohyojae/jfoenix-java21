@@ -19,9 +19,12 @@
 
 package com.jfoenix.controls.pannable;
 
+import java.util.function.Function;
+
 import com.jfoenix.bindings.CustomBidirectionalBinding;
 import com.jfoenix.bindings.base.IPropertyConverter;
 import com.jfoenix.controls.pannable.base.IPannablePane;
+
 import javafx.beans.binding.DoubleExpression;
 import javafx.beans.property.Property;
 import javafx.geometry.Insets;
@@ -29,8 +32,6 @@ import javafx.geometry.Orientation;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
-
-import java.util.function.Function;
 
 /**
  * Used to add scroll functionality to {@link PannablePane}

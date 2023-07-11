@@ -19,6 +19,7 @@
 package com.jfoenix.validation;
 
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.beans.DefaultProperty;
 import javafx.scene.control.ComboBoxBase;
 import javafx.scene.control.TextArea;

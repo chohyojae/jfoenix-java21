@@ -21,6 +21,7 @@ package com.jfoenix.skins;
 
 import com.jfoenix.controls.JFXSpinner;
 import com.sun.javafx.scene.NodeHelper;
+
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;

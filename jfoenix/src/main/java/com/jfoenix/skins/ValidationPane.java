@@ -23,6 +23,7 @@ import com.jfoenix.controls.base.IFXStaticControl;
 import com.jfoenix.controls.base.IFXValidatableControl;
 import com.jfoenix.utils.JFXUtilities;
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;

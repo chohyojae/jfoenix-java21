@@ -20,6 +20,7 @@
 package com.jfoenix.controls;
 
 import com.jfoenix.skins.JFXPopupSkin;
+
 import javafx.application.Platform;
 import javafx.beans.DefaultProperty;
 import javafx.beans.property.ObjectProperty;

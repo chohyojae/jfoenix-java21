@@ -25,6 +25,7 @@ import com.jfoenix.controls.JFXRippler.RipplerMask;
 import com.jfoenix.transitions.CachedTransition;
 import com.jfoenix.transitions.JFXFillTransition;
 import com.jfoenix.utils.JFXNodeUtils;
+
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;

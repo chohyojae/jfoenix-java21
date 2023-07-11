@@ -11,7 +11,6 @@ import com.jfoenix.controls.JFXTreeView;
 import com.jfoenix.controls.JFXTreeViewPath;
 
 import demos.ApplicationNoModule;
-import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;

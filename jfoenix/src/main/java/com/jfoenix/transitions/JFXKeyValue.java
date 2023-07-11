@@ -19,10 +19,10 @@
 
 package com.jfoenix.transitions;
 
+import java.util.function.Supplier;
+
 import javafx.animation.Interpolator;
 import javafx.beans.value.WritableValue;
-
-import java.util.function.Supplier;
 
 /**
  * @author Shadi Shaheen

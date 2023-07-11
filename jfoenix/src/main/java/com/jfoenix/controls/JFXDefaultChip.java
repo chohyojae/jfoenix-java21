@@ -20,6 +20,7 @@
 package com.jfoenix.controls;
 
 import com.jfoenix.svg.SVGGlyph;
+
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 

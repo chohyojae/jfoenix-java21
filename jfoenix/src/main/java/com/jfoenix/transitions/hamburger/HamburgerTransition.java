@@ -20,6 +20,7 @@
 package com.jfoenix.transitions.hamburger;
 
 import com.jfoenix.controls.JFXHamburger;
+
 import javafx.animation.Transition;
 
 /**

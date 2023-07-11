@@ -20,6 +20,7 @@
 package com.jfoenix.controls.base;
 
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.collections.ObservableList;
 

@@ -20,6 +20,7 @@
 package com.jfoenix.controls.cells.editors.base;
 
 import com.jfoenix.skins.JFXTreeTableCellSkin;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.Node;

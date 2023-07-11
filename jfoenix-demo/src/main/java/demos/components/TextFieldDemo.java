@@ -9,7 +9,6 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
 
 import demos.ApplicationNoModule;
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;

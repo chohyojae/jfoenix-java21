@@ -4,7 +4,6 @@ import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.controls.JFXSpinner;
 
 import demos.ApplicationNoModule;
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;

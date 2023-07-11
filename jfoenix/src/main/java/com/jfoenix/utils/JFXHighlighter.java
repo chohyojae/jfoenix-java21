@@ -19,10 +19,21 @@
 
 package com.jfoenix.utils;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import com.sun.javafx.geom.RectBounds;
 import com.sun.javafx.scene.NodeHelper;
 import com.sun.javafx.scene.text.TextLayout;
 import com.sun.javafx.scene.text.TextLine;
+
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.beans.WeakInvalidationListener;
@@ -39,11 +50,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.*;
 
 /**
  * JFXHighlighter is used to highlight Text and LabeledText nodes (in a specific {@link Parent})

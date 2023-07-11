@@ -20,6 +20,7 @@
 package com.jfoenix.converters;
 
 import com.jfoenix.controls.JFXSlider.IndicatorPosition;
+
 import javafx.css.ParsedValue;
 import javafx.css.StyleConverter;
 import javafx.scene.text.Font;

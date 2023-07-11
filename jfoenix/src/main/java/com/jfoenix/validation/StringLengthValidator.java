@@ -20,6 +20,7 @@
 package com.jfoenix.validation;
 
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.scene.control.TextInputControl;
 
 /**

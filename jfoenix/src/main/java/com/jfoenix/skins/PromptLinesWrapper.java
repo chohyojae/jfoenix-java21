@@ -19,10 +19,13 @@
 
 package com.jfoenix.skins;
 
+import java.util.function.Supplier;
+
 import com.jfoenix.controls.base.IFXLabelFloatControl;
 import com.jfoenix.transitions.JFXAnimationTimer;
 import com.jfoenix.transitions.JFXKeyFrame;
 import com.jfoenix.transitions.JFXKeyValue;
+
 import javafx.animation.Interpolator;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
@@ -31,7 +34,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.WritableValue;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Control;
@@ -49,8 +51,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.scene.transform.Scale;
 import javafx.util.Duration;
-
-import java.util.function.Supplier;
 
 /**
  * this class used to create label-float/focus-lines for all {@link IFXLabelFloatControl}

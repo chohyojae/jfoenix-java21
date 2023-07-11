@@ -19,11 +19,11 @@
 
 package com.jfoenix.transitions;
 
-import javafx.util.Duration;
-
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.function.Supplier;
+
+import javafx.util.Duration;
 
 /**
  * @author Shadi Shaheen

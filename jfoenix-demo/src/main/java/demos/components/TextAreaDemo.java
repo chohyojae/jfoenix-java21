@@ -8,7 +8,6 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.validation.RequiredFieldValidator;
 
 import demos.ApplicationNoModule;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;

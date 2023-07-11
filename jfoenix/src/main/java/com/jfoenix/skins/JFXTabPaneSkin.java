@@ -19,6 +19,10 @@
 
 package com.jfoenix.skins;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRippler;
 import com.jfoenix.controls.JFXRippler.RipplerMask;
@@ -29,7 +33,12 @@ import com.jfoenix.svg.SVGGlyph;
 import com.jfoenix.transitions.CachedTransition;
 import com.sun.javafx.scene.control.LambdaMultiplePropertyChangeListenerHandler;
 import com.sun.javafx.scene.control.behavior.TabPaneBehavior;
-import javafx.animation.*;
+
+import javafx.animation.Animation;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.beans.InvalidationListener;
 import javafx.beans.WeakInvalidationListener;
 import javafx.beans.property.DoubleProperty;
@@ -40,10 +49,20 @@ import javafx.collections.ListChangeListener.Change;
 import javafx.collections.ObservableList;
 import javafx.collections.WeakListChangeListener;
 import javafx.css.PseudoClass;
-import javafx.geometry.*;
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.geometry.Side;
+import javafx.geometry.VPos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Label;
+import javafx.scene.control.SkinBase;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
@@ -55,10 +74,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Scale;
 import javafx.util.Duration;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * <h1>Material Design TabPane Skin</h1>

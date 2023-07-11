@@ -24,6 +24,7 @@ import com.jfoenix.transitions.JFXKeyFrame;
 import com.jfoenix.transitions.JFXKeyValue;
 import com.sun.javafx.event.EventHandlerManager;
 import com.sun.javafx.scene.NodeHelper;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.EventDispatchChain;

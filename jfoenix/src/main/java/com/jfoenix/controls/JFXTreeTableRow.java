@@ -20,6 +20,7 @@
 package com.jfoenix.controls;
 
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+
 import javafx.css.PseudoClass;
 import javafx.scene.control.TreeTableRow;
 

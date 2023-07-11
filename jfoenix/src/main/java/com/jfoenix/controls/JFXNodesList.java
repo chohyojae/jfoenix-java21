@@ -19,8 +19,18 @@
 
 package com.jfoenix.controls;
 
-import javafx.animation.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.function.BiFunction;
+
+import javafx.animation.Animation;
 import javafx.animation.Animation.Status;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.HPos;
@@ -35,12 +45,6 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.function.BiFunction;
 
 /**
  * list of nodes that are toggled On/Off by clicking on the 1st node

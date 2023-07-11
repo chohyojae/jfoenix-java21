@@ -8,7 +8,6 @@ import com.jfoenix.controls.JFXToggleButton;
 import com.jfoenix.controls.JFXToggleNode;
 
 import demos.ApplicationNoModule;
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.VBox;

@@ -6,7 +6,6 @@ import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXSlider.IndicatorPosition;
 
 import demos.ApplicationNoModule;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.Group;

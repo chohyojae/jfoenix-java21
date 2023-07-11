@@ -19,8 +19,12 @@
 
 package com.jfoenix.skins;
 
+import java.lang.reflect.Field;
+import java.util.Arrays;
+
 import com.jfoenix.adapters.ReflectionHelper;
 import com.jfoenix.controls.JFXTextArea;
+
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
@@ -31,9 +35,6 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-
-import java.lang.reflect.Field;
-import java.util.Arrays;
 
 /**
  * <h1>Material Design TextArea Skin</h1>

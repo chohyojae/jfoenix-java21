@@ -19,18 +19,23 @@
 
 package com.jfoenix.controls;
 
+import java.lang.ref.WeakReference;
+
 import com.jfoenix.utils.JFXNodeUtils;
+
 import javafx.beans.InvalidationListener;
 import javafx.beans.WeakInvalidationListener;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.TreeCell;
 import javafx.scene.control.TreeItem;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-
-import java.lang.ref.WeakReference;
 
 /**
  * JFXTreeCell is simple material design implementation of a tree cell.

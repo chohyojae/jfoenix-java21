@@ -20,6 +20,7 @@
 package com.jfoenix.controls;
 
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.scene.AccessibleAttribute;
 

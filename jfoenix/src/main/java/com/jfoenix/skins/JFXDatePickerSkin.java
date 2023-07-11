@@ -19,10 +19,14 @@
 
 package com.jfoenix.skins;
 
+import java.time.LocalDate;
+import java.time.YearMonth;
+
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialog.DialogTransition;
 import com.jfoenix.controls.JFXTextField;
+
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.DatePicker;
@@ -32,9 +36,6 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.util.StringConverter;
-
-import java.time.LocalDate;
-import java.time.YearMonth;
 
 /**
  * <h1>Material Design Date Picker Skin</h1>

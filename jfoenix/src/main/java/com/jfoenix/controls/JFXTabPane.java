@@ -19,8 +19,13 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.skins.JFXTabPaneSkin;
+
 import javafx.css.CssMetaData;
 import javafx.css.SimpleStyleableBooleanProperty;
 import javafx.css.Styleable;
@@ -29,10 +34,6 @@ import javafx.css.converter.BooleanConverter;
 import javafx.scene.control.Skin;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseEvent;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * JFXTabPane is the material design implementation of a tab pane. TODO: REWORK SWITCH ANIMATION

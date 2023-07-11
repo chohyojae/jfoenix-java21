@@ -21,6 +21,7 @@ package com.jfoenix.validation;
 
 import com.jfoenix.utils.JFXUtilities;
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.animation.Animation.Status;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;

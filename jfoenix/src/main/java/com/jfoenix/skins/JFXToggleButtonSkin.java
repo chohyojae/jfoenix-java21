@@ -27,6 +27,7 @@ import com.jfoenix.effects.JFXDepthManager;
 import com.jfoenix.transitions.JFXAnimationTimer;
 import com.jfoenix.transitions.JFXKeyFrame;
 import com.jfoenix.transitions.JFXKeyValue;
+
 import javafx.animation.Interpolator;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;

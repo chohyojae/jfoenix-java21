@@ -19,17 +19,17 @@
 
 package com.jfoenix.transitions;
 
-import javafx.animation.AnimationTimer;
-import javafx.beans.value.WritableValue;
-import javafx.scene.Node;
-import javafx.util.Duration;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Supplier;
+
+import javafx.animation.AnimationTimer;
+import javafx.beans.value.WritableValue;
+import javafx.scene.Node;
+import javafx.util.Duration;
 
 /**
  * Custom AnimationTimer that can be created the same way as a timeline, however it doesn't behave

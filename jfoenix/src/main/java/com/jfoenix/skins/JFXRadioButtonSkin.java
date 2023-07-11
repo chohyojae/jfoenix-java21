@@ -25,6 +25,7 @@ import com.jfoenix.controls.JFXRippler.RipplerMask;
 import com.jfoenix.transitions.JFXAnimationTimer;
 import com.jfoenix.transitions.JFXKeyFrame;
 import com.jfoenix.transitions.JFXKeyValue;
+
 import javafx.animation.Interpolator;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;

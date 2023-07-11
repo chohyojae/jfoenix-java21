@@ -19,13 +19,14 @@
 
 package com.jfoenix.validation;
 
+import java.util.regex.Pattern;
+
 import com.jfoenix.validation.base.ValidatorBase;
+
 import javafx.beans.DefaultProperty;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputControl;
-
-import java.util.regex.Pattern;
 
 /**
  * Regex validation, that is applied on text input controls such as {@link TextField} and

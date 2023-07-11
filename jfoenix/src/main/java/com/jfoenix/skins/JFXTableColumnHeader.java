@@ -19,24 +19,8 @@
 
 package com.jfoenix.skins;
 
-import javafx.animation.Animation.Status;
-import javafx.animation.Interpolator;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
-import javafx.beans.binding.Bindings;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumnBase;
 import javafx.scene.control.skin.TableColumnHeader;
-import javafx.scene.control.skin.TableViewSkinBase;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.StackPane;
-import javafx.util.Duration;
 
 /**
  * @author Shadi Shaheen

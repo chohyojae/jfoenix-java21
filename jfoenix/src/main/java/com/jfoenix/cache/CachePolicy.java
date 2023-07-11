@@ -19,7 +19,11 @@
 
 package com.jfoenix.cache;
 
+import java.util.ArrayList;
+import java.util.WeakHashMap;
+
 import com.jfoenix.transitions.CacheMemento;
+
 import javafx.scene.CacheHint;
 import javafx.scene.Node;
 import javafx.scene.SnapshotParameters;
@@ -27,9 +31,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-
-import java.util.ArrayList;
-import java.util.WeakHashMap;
 
 public interface CachePolicy<T extends Node>
 {

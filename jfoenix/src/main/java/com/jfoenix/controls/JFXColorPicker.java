@@ -19,8 +19,13 @@
 
 package com.jfoenix.controls;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.skins.JFXColorPickerSkin;
+
 import javafx.css.CssMetaData;
 import javafx.css.SimpleStyleableBooleanProperty;
 import javafx.css.Styleable;
@@ -29,10 +34,6 @@ import javafx.css.converter.BooleanConverter;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Skin;
 import javafx.scene.paint.Color;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * JFXColorPicker is the metrial design implementation of color picker.
