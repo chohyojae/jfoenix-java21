@@ -23,7 +23,6 @@ import com.jfoenix.transitions.JFXAnimationTimer;
 import com.jfoenix.transitions.JFXKeyFrame;
 import com.jfoenix.transitions.JFXKeyValue;
 import com.sun.javafx.event.EventHandlerManager;
-import com.sun.javafx.scene.NodeHelper;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -619,8 +618,7 @@ public class JFXTooltip extends Tooltip
          final Window owner = getWindow(hoveredNode);
          if (owner != null && owner.isShowing())
          {
-            final boolean treeVisible = NodeHelper.isTreeVisible(hoveredNode);
-            if (treeVisible)
+            if (hoveredNode.isVisible())
             {
                visibleRunnable.run();
             }

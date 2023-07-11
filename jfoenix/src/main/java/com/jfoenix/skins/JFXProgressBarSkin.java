@@ -21,7 +21,6 @@ package com.jfoenix.skins;
 
 import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.utils.JFXNodeUtils;
-import com.sun.javafx.scene.NodeHelper;
 
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
@@ -144,7 +143,7 @@ public class JFXProgressBarSkin extends ProgressIndicatorSkin
       if (getSkinnable().isIndeterminate())
       {
          createIndeterminateTimeline();
-         if (NodeHelper.isTreeShowing(getSkinnable()))
+         if (getSkinnable().isVisible() && getSkinnable().getScene() != null)
          {
             indeterminateTransition.play();
          }

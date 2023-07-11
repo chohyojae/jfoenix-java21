@@ -30,7 +30,6 @@ import java.util.List;
 import java.util.Set;
 
 import com.sun.javafx.geom.RectBounds;
-import com.sun.javafx.scene.NodeHelper;
 import com.sun.javafx.scene.text.TextLayout;
 import com.sun.javafx.scene.text.TextLine;
 
@@ -106,7 +105,7 @@ public class JFXHighlighter
       {
          Text text = ((Text) node);
          final int beginIndex = text.getText().toLowerCase().indexOf(query.toLowerCase());
-         if (beginIndex > -1 && NodeHelper.isTreeVisible(node))
+         if (beginIndex > -1 && node.isVisible() && node.getScene() != null)
          {
             ArrayList<Bounds> boundingBoxes = getMatchingBounds(query, text);
             ArrayList<Rectangle> rectangles = new ArrayList<>();

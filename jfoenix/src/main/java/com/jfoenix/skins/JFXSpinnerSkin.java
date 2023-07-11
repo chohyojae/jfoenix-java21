@@ -20,13 +20,14 @@
 package com.jfoenix.skins;
 
 import com.jfoenix.controls.JFXSpinner;
-import com.sun.javafx.scene.NodeHelper;
 
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.beans.binding.Bindings;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.SkinBase;
 import javafx.scene.layout.Region;
@@ -94,6 +95,7 @@ public class JFXSpinnerSkin extends SkinBase<JFXSpinner>
       fillRect = new Rectangle();
       fillRect.setFill(Color.TRANSPARENT);
       text = new Text();
+      text.setStyle("-fx-font-size:null");
       text.getStyleClass().setAll("text", "percentage");
       final Group group = new Group(fillRect, track, arc, text);
       group.setManaged(false);
@@ -104,7 +106,7 @@ public class JFXSpinnerSkin extends SkinBase<JFXSpinner>
       // register listeners
       registerChangeListener(control.indeterminateProperty(), obs -> initialize());
       registerChangeListener(control.progressProperty(), obs -> updateProgress());
-      //      registerChangeListener(NodeHelper.treeShowingProperty(control), obs -> updateAnimation());
+      registerChangeListener(Bindings.selectBoolean(control.sceneProperty(), "window", "showing"), obs -> updateAnimation());
       registerChangeListener(control.sceneProperty(), obs -> updateAnimation());
    }
 
@@ -115,7 +117,7 @@ public class JFXSpinnerSkin extends SkinBase<JFXSpinner>
          if (timeline == null)
          {
             createTransition();
-            if (NodeHelper.isTreeShowing(getSkinnable()))
+            if (isShowing(getSkinnable()))
             {
                timeline.play();
             }
@@ -170,7 +172,8 @@ public class JFXSpinnerSkin extends SkinBase<JFXSpinner>
    private void updateAnimation()
    {
       ProgressIndicator control = getSkinnable();
-      final boolean isTreeShowing = NodeHelper.isTreeShowing(control) && control.getScene() != null;
+      final boolean isTreeShowing = isShowing(control);
+
       if (timeline != null)
       {
          pauseTimeline(!isTreeShowing);
@@ -179,6 +182,17 @@ public class JFXSpinnerSkin extends SkinBase<JFXSpinner>
       {
          createTransition();
       }
+   }
+
+   // TODO Not sure if Node.isVisible() actually accounts for a parent not visible
+   private boolean isShowing(Node control)
+   {
+      return control.isVisible() && control.getScene() != null;
+   }
+
+   private double computeSize()
+   {
+      return control.getRadius() * 2 + arc.getStrokeWidth() * 2;
    }
 
    @Override
@@ -190,7 +204,7 @@ public class JFXSpinnerSkin extends SkinBase<JFXSpinner>
       }
       else
       {
-         return control.getRadius() * 2 + arc.getStrokeWidth() * 2;
+         return computeSize();
       }
    }
 
@@ -203,20 +217,34 @@ public class JFXSpinnerSkin extends SkinBase<JFXSpinner>
       }
       else
       {
-         return control.getRadius() * 2 + arc.getStrokeWidth() * 2;
+         return computeSize();
       }
    }
 
    @Override
    protected double computePrefWidth(double height, double topInset, double rightInset, double bottomInset, double leftInset)
    {
-      return arcPane.prefWidth(-1);
+      if (Region.USE_COMPUTED_SIZE == control.getRadius())
+      {
+         return arcPane.prefWidth(-1);
+      }
+      else
+      {
+         return computeSize();
+      }
    }
 
    @Override
    protected double computePrefHeight(double width, double topInset, double rightInset, double bottomInset, double leftInset)
    {
-      return arcPane.prefHeight(-1);
+      if (Region.USE_COMPUTED_SIZE == control.getRadius())
+      {
+         return arcPane.prefHeight(-1);
+      }
+      else
+      {
+         return computeSize();
+      }
    }
 
    /**
