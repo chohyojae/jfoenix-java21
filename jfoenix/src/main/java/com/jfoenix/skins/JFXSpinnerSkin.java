@@ -103,7 +103,7 @@ public class JFXSpinnerSkin extends SkinBase<JFXSpinner>
       // register listeners
       registerChangeListener(control.indeterminateProperty(), obs -> initialize());
       registerChangeListener(control.progressProperty(), obs -> updateProgress());
-      registerChangeListener(NodeHelper.treeShowingProperty(control), obs -> updateAnimation());
+      //      registerChangeListener(NodeHelper.treeShowingProperty(control), obs -> updateAnimation());
       registerChangeListener(control.sceneProperty(), obs -> updateAnimation());
    }
 
