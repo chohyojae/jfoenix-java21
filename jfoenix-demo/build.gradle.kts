@@ -13,6 +13,13 @@ ihmc {
 
 mainDependencies {
    api("us.ihmc:jfoenix:source")
+
+   api("javax.annotation:javax.annotation-api:1.3.2")
+   api("io.datafx:datafx:8.0.1")
+   api("io.datafx:flow:8.0.1")
+   
+    api("org.kordamp.ikonli:ikonli-javafx:2.4.0")
+    api("org.kordamp.ikonli:ikonli-fontawesome5-pack:2.4.0")
 }
 
 testDependencies {

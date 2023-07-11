@@ -81,7 +81,6 @@ public class JFXDatePickerSkin extends JFXGenericPickerSkin<LocalDate>
       {
          reflectUpdateDisplayNode();
          content = null;
-         popup = null;
       });
 
       registerChangeListener(datePicker.valueProperty(), obs ->

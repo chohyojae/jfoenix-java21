@@ -18,10 +18,11 @@
 
 package demos.components;
 
+import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
-import demos.MainDemo;
-import javafx.application.Application;
+
+import demos.ApplicationNoModule;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -31,50 +32,50 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class DatePickerDemo extends Application {
+public class DatePickerDemo extends ApplicationNoModule
+{
 
+   @Override
+   public void start(Stage stage)
+   {
 
-    @Override
-    public void start(Stage stage) {
+      FlowPane main = new FlowPane();
+      main.setVgap(20);
+      main.setHgap(20);
 
-        FlowPane main = new FlowPane();
-        main.setVgap(20);
-        main.setHgap(20);
+      DatePicker datePicker = new DatePicker();
 
+      main.getChildren().add(datePicker);
+      JFXDatePicker datePickerFX = new JFXDatePicker();
 
-        DatePicker datePicker = new DatePicker();
+      main.getChildren().add(datePickerFX);
+      datePickerFX.setPromptText("pick a date");
+      JFXTimePicker blueDatePicker = new JFXTimePicker();
+      blueDatePicker.setDefaultColor(Color.valueOf("#3f51b5"));
+      blueDatePicker.setOverLay(true);
+      main.getChildren().add(blueDatePicker);
 
-        main.getChildren().add(datePicker);
-        JFXDatePicker datePickerFX = new JFXDatePicker();
+      StackPane pane = new StackPane();
+      pane.getChildren().add(main);
+      StackPane.setMargin(main, new Insets(100));
+      pane.setStyle("-fx-background-color:WHITE");
 
-        main.getChildren().add(datePickerFX);
-        datePickerFX.setPromptText("pick a date");
-        JFXTimePicker blueDatePicker = new JFXTimePicker();
-        blueDatePicker.setDefaultColor(Color.valueOf("#3f51b5"));
-        blueDatePicker.setOverLay(true);
-        main.getChildren().add(blueDatePicker);
+      final Scene scene = new Scene(pane, 400, 700);
+      final ObservableList<String> stylesheets = scene.getStylesheets();
+      stylesheets.addAll(JFoenixResources.load("css/jfoenix-fonts.css").toExternalForm(),
+                         JFoenixResources.load("css/jfoenix-design.css").toExternalForm());
+      stage.setTitle("JFX Date Picker Demo");
+      stage.setScene(scene);
+      stage.show();
 
+   }
 
-        StackPane pane = new StackPane();
-        pane.getChildren().add(main);
-        StackPane.setMargin(main, new Insets(100));
-        pane.setStyle("-fx-background-color:WHITE");
+   // toRun:
+   // --add-exports=javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix --add-exports=javafx.base/com.sun.javafx.binding=com.jfoenix --add-exports=javafx.graphics/com.sun.javafx.stage=com.jfoenix --add-exports=javafx.base/com.sun.javafx.event=com.jfoenix
 
-        final Scene scene = new Scene(pane, 400, 700);
-        final ObservableList<String> stylesheets = scene.getStylesheets();
-        stylesheets.addAll(MainDemo.class.getResource("/css/jfoenix-fonts.css").toExternalForm(),
-                           MainDemo.class.getResource("/css/jfoenix-design.css").toExternalForm());
-        stage.setTitle("JFX Date Picker Demo");
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-    // toRun:
-    // --add-exports=javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix --add-exports=javafx.base/com.sun.javafx.binding=com.jfoenix --add-exports=javafx.graphics/com.sun.javafx.stage=com.jfoenix --add-exports=javafx.base/com.sun.javafx.event=com.jfoenix
-
-    public static void main(String[] args) {
-        launch(args);
-    }
+   public static void main(String[] args)
+   {
+      launch(args);
+   }
 
 }

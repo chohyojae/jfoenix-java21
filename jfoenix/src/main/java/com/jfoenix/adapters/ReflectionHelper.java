@@ -32,41 +32,13 @@ import java.lang.reflect.Method;
 public class ReflectionHelper
 {
 
-   //    private static Unsafe unsafe = null;
-   //    private static long objectFieldOffset;
-   private static Method accessible0;
-
-   static
-   {
-      try
-      {
-         //            unsafe = AccessController.doPrivileged((PrivilegedExceptionAction<Unsafe>) () -> {
-         //                Field theUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
-         //                theUnsafe.setAccessible(true);
-         //                return (Unsafe) theUnsafe.get(null);
-         //            });
-         //            Field overrideField = AccessibleObject.class.getDeclaredField("override");
-         //            objectFieldOffset = unsafe.objectFieldOffset(overrideField);
-         accessible0 = AccessibleObject.class.getDeclaredMethod("setAccessible0", boolean.class);
-         accessible0.setAccessible(true);
-      }
-      catch (Throwable ex)
-      {
-         ex.printStackTrace();
-      }
-   }
-
-   private static void setAccessible(AccessibleObject obj) throws InvocationTargetException, IllegalAccessException
-   {
-      accessible0.invoke(obj, true);
-   }
-
-   public static <T> T invoke(Class cls, Object obj, String methodName)
+   @SuppressWarnings("unchecked")
+   public static <T> T invoke(Class<?> cls, Object obj, String methodName)
    {
       try
       {
          Method method = cls.getDeclaredMethod(methodName);
-         setAccessible(method);
+         method.setAccessible(true);
          return (T) method.invoke(obj);
       }
       catch (Throwable ex)
@@ -80,12 +52,12 @@ public class ReflectionHelper
       return invoke(obj.getClass(), obj, methodName);
    }
 
-   public static Method getMethod(Class cls, String methodName)
+   public static Method getMethod(Class<?> cls, String methodName)
    {
       try
       {
          Method method = cls.getDeclaredMethod(methodName);
-         setAccessible(method);
+         method.setAccessible(true);
          return method;
       }
       catch (Throwable ex)
@@ -94,12 +66,12 @@ public class ReflectionHelper
       }
    }
 
-   public static Field getField(Class cls, String fieldName)
+   public static Field getField(Class<?> cls, String fieldName)
    {
       try
       {
          Field field = cls.getDeclaredField(fieldName);
-         setAccessible(field);
+         field.setAccessible(true);
          return field;
       }
       catch (Throwable ex)
@@ -113,12 +85,13 @@ public class ReflectionHelper
       return getFieldContent(obj.getClass(), obj, fieldName);
    }
 
-   public static <T> T getFieldContent(Class cls, Object obj, String fieldName)
+   @SuppressWarnings("unchecked")
+   public static <T> T getFieldContent(Class<?> cls, Object obj, String fieldName)
    {
       try
       {
          Field field = cls.getDeclaredField(fieldName);
-         setAccessible(field);
+         field.setAccessible(true);
          return (T) field.get(obj);
       }
       catch (Throwable ex)
@@ -127,12 +100,12 @@ public class ReflectionHelper
       }
    }
 
-   public static void setFieldContent(Class cls, Object obj, String fieldName, Object content)
+   public static void setFieldContent(Class<?> cls, Object obj, String fieldName, Object content)
    {
       try
       {
          Field field = cls.getDeclaredField(fieldName);
-         setAccessible(field);
+         field.setAccessible(true);
          field.set(obj, content);
       }
       catch (Throwable ex)

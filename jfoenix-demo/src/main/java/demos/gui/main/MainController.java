@@ -1,5 +1,12 @@
 package demos.gui.main;
 
+import static io.datafx.controller.flow.container.ContainerAnimations.SWIPE_LEFT;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.controls.JFXListView;
@@ -8,6 +15,7 @@ import com.jfoenix.controls.JFXPopup.PopupHPosition;
 import com.jfoenix.controls.JFXPopup.PopupVPosition;
 import com.jfoenix.controls.JFXRippler;
 import com.jfoenix.controls.JFXTooltip;
+
 import demos.datafx.ExtendedAnimatedFlowContainer;
 import demos.gui.sidemenu.SideMenuController;
 import demos.gui.uicomponents.ButtonController;
@@ -24,103 +32,105 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
-import javax.annotation.PostConstruct;
+@ViewController(value = "/com/jfoenix/assets/fxml/Main.fxml", title = "Material Design Example")
+public final class MainController
+{
 
-import static io.datafx.controller.flow.container.ContainerAnimations.SWIPE_LEFT;
+   @FXMLViewFlowContext
+   private ViewFlowContext context;
 
-@ViewController(value = "/fxml/Main.fxml", title = "Material Design Example")
-public final class MainController {
+   @FXML
+   private StackPane root;
 
-    @FXMLViewFlowContext
-    private ViewFlowContext context;
+   @FXML
+   private StackPane titleBurgerContainer;
+   @FXML
+   private JFXHamburger titleBurger;
 
-    @FXML
-    private StackPane root;
+   @FXML
+   private StackPane optionsBurger;
+   @FXML
+   private JFXRippler optionsRippler;
+   @FXML
+   private JFXDrawer drawer;
 
-    @FXML
-    private StackPane titleBurgerContainer;
-    @FXML
-    private JFXHamburger titleBurger;
+   private JFXPopup toolbarPopup;
 
-    @FXML
-    private StackPane optionsBurger;
-    @FXML
-    private JFXRippler optionsRippler;
-    @FXML
-    private JFXDrawer drawer;
+   /**
+    * init fxml when loaded.
+    * 
+    * @throws IOException
+    */
+   public void initialize(URL location, ResourceBundle resources) throws Exception
+   {
+      // init the title hamburger icon
+      final JFXTooltip burgerTooltip = new JFXTooltip("Open drawer");
 
-    private JFXPopup toolbarPopup;
+      drawer.setOnDrawerOpening(e ->
+      {
+         final Transition animation = titleBurger.getAnimation();
+         burgerTooltip.setText("Close drawer");
+         animation.setRate(1);
+         animation.play();
+      });
+      drawer.setOnDrawerClosing(e ->
+      {
+         final Transition animation = titleBurger.getAnimation();
+         burgerTooltip.setText("Open drawer");
+         animation.setRate(-1);
+         animation.play();
+      });
+      titleBurgerContainer.setOnMouseClicked(e ->
+      {
+         if (drawer.isClosed() || drawer.isClosing())
+         {
+            drawer.open();
+         }
+         else
+         {
+            drawer.close();
+         }
+      });
 
-    /**
-     * init fxml when loaded.
-     */
-    @PostConstruct
-    public void init() throws Exception {
-        // init the title hamburger icon
-        final JFXTooltip burgerTooltip = new JFXTooltip("Open drawer");
+      FXMLLoader loader = new FXMLLoader(JFoenixResources.load("fxml/ui/popup/MainPopup.fxml"));
+      loader.setController(new InputController());
+      toolbarPopup = new JFXPopup(loader.load());
 
-        drawer.setOnDrawerOpening(e -> {
-            final Transition animation = titleBurger.getAnimation();
-            burgerTooltip.setText("Close drawer");
-            animation.setRate(1);
-            animation.play();
-        });
-        drawer.setOnDrawerClosing(e -> {
-            final Transition animation = titleBurger.getAnimation();
-            burgerTooltip.setText("Open drawer");
-            animation.setRate(-1);
-            animation.play();
-        });
-        titleBurgerContainer.setOnMouseClicked(e -> {
-            if (drawer.isClosed() || drawer.isClosing()) {
-                drawer.open();
-            } else {
-                drawer.close();
-            }
-        });
+      optionsBurger.setOnMouseClicked(e -> toolbarPopup.show(optionsBurger, PopupVPosition.TOP, PopupHPosition.RIGHT, -12, 15));
+      JFXTooltip.setVisibleDuration(Duration.millis(3000));
+      JFXTooltip.install(titleBurgerContainer, burgerTooltip, Pos.BOTTOM_CENTER);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/popup/MainPopup.fxml"));
-        loader.setController(new InputController());
-        toolbarPopup = new JFXPopup(loader.load());
+      // create the inner flow and content
+      context = new ViewFlowContext();
+      // set the default controller
+      Flow innerFlow = new Flow(ButtonController.class);
 
-        optionsBurger.setOnMouseClicked(e ->
-            toolbarPopup.show(optionsBurger,
-                PopupVPosition.TOP,
-                PopupHPosition.RIGHT,
-                -12,
-                15));
-        JFXTooltip.setVisibleDuration(Duration.millis(3000));
-        JFXTooltip.install(titleBurgerContainer, burgerTooltip, Pos.BOTTOM_CENTER);
+      final FlowHandler flowHandler = innerFlow.createHandler(context);
+      context.register("ContentFlowHandler", flowHandler);
+      context.register("ContentFlow", innerFlow);
+      final Duration containerAnimationDuration = Duration.millis(320);
+      drawer.setContent(flowHandler.start(new ExtendedAnimatedFlowContainer(containerAnimationDuration, SWIPE_LEFT)));
+      context.register("ContentPane", drawer.getContent().get(0));
 
-        // create the inner flow and content
-        context = new ViewFlowContext();
-        // set the default controller
-        Flow innerFlow = new Flow(ButtonController.class);
+      // side controller will add links to the content flow
+      Flow sideMenuFlow = new Flow(SideMenuController.class);
+      final FlowHandler sideMenuFlowHandler = sideMenuFlow.createHandler(context);
+      drawer.setSidePane(sideMenuFlowHandler.start(new ExtendedAnimatedFlowContainer(containerAnimationDuration, SWIPE_LEFT)));
+   }
 
-        final FlowHandler flowHandler = innerFlow.createHandler(context);
-        context.register("ContentFlowHandler", flowHandler);
-        context.register("ContentFlow", innerFlow);
-        final Duration containerAnimationDuration = Duration.millis(320);
-        drawer.setContent(flowHandler.start(new ExtendedAnimatedFlowContainer(containerAnimationDuration, SWIPE_LEFT)));
-        context.register("ContentPane", drawer.getContent().get(0));
+   public static final class InputController
+   {
+      @FXML
+      private JFXListView<?> toolbarPopupList;
 
-        // side controller will add links to the content flow
-        Flow sideMenuFlow = new Flow(SideMenuController.class);
-        final FlowHandler sideMenuFlowHandler = sideMenuFlow.createHandler(context);
-        drawer.setSidePane(sideMenuFlowHandler.start(new ExtendedAnimatedFlowContainer(containerAnimationDuration,
-            SWIPE_LEFT)));
-    }
-
-    public static final class InputController {
-        @FXML
-        private JFXListView<?> toolbarPopupList;
-
-        // close application
-        @FXML
-        private void submit() {
-            if (toolbarPopupList.getSelectionModel().getSelectedIndex() == 1) {
-                Platform.exit();
-            }
-        }
-    }
+      // close application
+      @FXML
+      private void submit()
+      {
+         if (toolbarPopupList.getSelectionModel().getSelectedIndex() == 1)
+         {
+            Platform.exit();
+         }
+      }
+   }
 }

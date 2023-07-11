@@ -56,7 +56,6 @@ public abstract class JFXGenericPickerSkin<T> extends ComboBoxPopupControl<T>
 
    // reference of the arrow button node in getChildren (not the actual field)
    protected Pane arrowButton;
-   protected PopupControl popup;
 
    public JFXGenericPickerSkin(ComboBoxBase<T> comboBoxBase)
    {
@@ -94,8 +93,6 @@ public abstract class JFXGenericPickerSkin<T> extends ComboBoxPopupControl<T>
       });
 
       removeParentPopupHandlers();
-
-      popup = ReflectionHelper.getFieldContent(ComboBoxPopupControl.class, this, "popup");
    }
 
    @Override
