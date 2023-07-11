@@ -1,7 +1,5 @@
-<h1 align="center">
-    <img width=300 src="https://github.com/ihmcrobotics/JFoenix-Group/blob/master/logo-JFX.png">
-</h1>
 <p align="center">
+<img width=300 src="https://github.com/ihmcrobotics/JFoenix-Group/blob/master/logo-JFX.png"><br>
 <sup>
 <b>JFoenix is an open source Java library, that implements Google Material Design using Java components</b>
 </sup>
