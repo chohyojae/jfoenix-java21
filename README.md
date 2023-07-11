@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/ihmcrobotics/JFoenix-Group/blob/master/logo-JFX.png">
+    <img width=300 src="https://github.com/ihmcrobotics/JFoenix-Group/blob/master/logo-JFX.png">
 </h1>
 <p align="center">
 <sup>
