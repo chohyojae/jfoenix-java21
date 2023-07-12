@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.jfoenix.adapters.ReflectionHelper;
 import com.jfoenix.controls.JFXClippedPane;
 import com.jfoenix.controls.JFXColorPicker;
 import com.jfoenix.controls.JFXRippler;
@@ -44,6 +45,7 @@ import javafx.scene.Node;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.skin.ColorPickerSkin;
 import javafx.scene.control.skin.ComboBoxPopupControl;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -55,7 +57,7 @@ import javafx.util.Duration;
 /**
  * @author Shadi Shaheen
  */
-public class JFXColorPickerSkin extends JFXGenericPickerSkin<Color>
+public class JFXColorPickerSkin extends ColorPickerSkin
 {
 
    private Label displayNode;
@@ -134,10 +136,6 @@ public class JFXColorPickerSkin extends JFXGenericPickerSkin<Color>
    @Override
    protected double computePrefHeight(double width, double topInset, double rightInset, double bottomInset, double leftInset)
    {
-      if (colorBox == null)
-      {
-         reflectUpdateDisplayArea();
-      }
       return topInset + colorBox.prefHeight(width) + bottomInset;
    }
 
@@ -165,7 +163,14 @@ public class JFXColorPickerSkin extends JFXGenericPickerSkin<Color>
    @Override
    public void show()
    {
-      super.show();
+      try
+      {
+         super.show();
+      }
+      catch (NullPointerException e)
+      {
+         // The super method will throw an NPE because popupContent is never created
+      }
       final ColorPicker colorPicker = (ColorPicker) getSkinnable();
       popupContent.updateSelection(colorPicker.getValue());
    }
