@@ -26,7 +26,6 @@ import java.util.function.Predicate;
 
 import com.jfoenix.controls.events.JFXAutoCompleteEvent;
 import com.jfoenix.skins.JFXAutoCompletePopupSkin;
-import com.sun.javafx.stage.PopupWindowHelper;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
@@ -42,11 +41,14 @@ import javafx.css.Styleable;
 import javafx.css.StyleableProperty;
 import javafx.css.converter.SizeConverter;
 import javafx.event.EventHandler;
+import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PopupControl;
 import javafx.scene.control.Skin;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.stage.Window;
 import javafx.util.Callback;
@@ -73,11 +75,27 @@ public class JFXAutoCompletePopup<T> extends PopupControl
    {
       super();
       bridge = new CSSBridge();
-      PopupWindowHelper.getContent(this).setAll(new Node[] {this.bridge});
+      getContent().setAll(new Node[] {this.bridge});
       setAutoFix(true);
       setAutoHide(true);
       setHideOnEscape(true);
       getStyleClass().add(DEFAULT_STYLE_CLASS);
+   }
+
+   private ObservableList<Node> getContent()
+   {
+      final Parent rootNode = getScene().getRoot();
+      if (rootNode instanceof Group)
+      {
+         return ((Group) rootNode).getChildren();
+      }
+
+      if (rootNode instanceof Pane)
+      {
+         return ((Pane) rootNode).getChildren();
+      }
+
+      throw new IllegalStateException("The content of the Popup can't be accessed");
    }
 
    @Override

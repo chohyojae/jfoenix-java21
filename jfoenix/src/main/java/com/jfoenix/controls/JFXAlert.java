@@ -24,7 +24,6 @@ import java.util.List;
 import com.jfoenix.animation.alert.JFXAlertAnimation;
 import com.jfoenix.assets.JFoenixResources;
 import com.jfoenix.effects.JFXDepthManager;
-import com.sun.javafx.event.EventHandlerManager;
 
 import javafx.animation.Animation;
 import javafx.application.Platform;
@@ -34,14 +33,12 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.Event;
-import javafx.event.EventDispatchChain;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
-import javafx.scene.control.DialogEvent;
 import javafx.scene.control.DialogPane;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -194,13 +191,13 @@ public class JFXAlert<R> extends Dialog<R>
       }
 
       // handle animation / owner window layout changes
-      eventHandlerManager.addEventHandler(DialogEvent.DIALOG_SHOWING, event ->
+      onShowingProperty().set(event ->
       {
          addLayoutListeners();
          JFXAlertAnimation currentAnimation = getCurrentAnimation();
          currentAnimation.initAnimation(contentContainer.getParent(), dialogPane);
       });
-      eventHandlerManager.addEventHandler(DialogEvent.DIALOG_SHOWN, event ->
+      onShownProperty().set(event ->
       {
          if (getOwner() != null)
          {
@@ -215,7 +212,7 @@ public class JFXAlert<R> extends Dialog<R>
          }
       });
 
-      eventHandlerManager.addEventHandler(DialogEvent.DIALOG_CLOSE_REQUEST, event ->
+      onCloseRequestProperty().set(event ->
       {
          if (animateClosing)
          {
@@ -223,7 +220,7 @@ public class JFXAlert<R> extends Dialog<R>
             hideWithAnimation();
          }
       });
-      eventHandlerManager.addEventHandler(DialogEvent.DIALOG_HIDDEN, event -> removeLayoutListeners());
+      onHiddenProperty().set(event -> removeLayoutListeners());
 
       getDialogPane().getScene().getWindow().addEventFilter(KeyEvent.KEY_PRESSED, keyEvent ->
       {
@@ -335,17 +332,6 @@ public class JFXAlert<R> extends Dialog<R>
             Platform.runLater(this::hide);
          }
       }
-   }
-
-   private final EventHandlerManager eventHandlerManager = new EventHandlerManager(this);
-
-   /**
-    * {@inheritDoc}
-    */
-   @Override
-   public EventDispatchChain buildEventDispatchChain(EventDispatchChain tail)
-   {
-      return super.buildEventDispatchChain(tail).prepend(eventHandlerManager);
    }
 
    public void setContent(Node... content)
