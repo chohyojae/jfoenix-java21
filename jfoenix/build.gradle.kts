@@ -1,24 +1,45 @@
 plugins {
-   id("us.ihmc.ihmc-build")
-   id("us.ihmc.ihmc-ci") version "8.3"
-   id("us.ihmc.ihmc-cd") version "1.24"
+    java
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
-ihmc {
-   loadProductProperties("../group.gradle.properties")
-
-   configureDependencyResolution()
-   configurePublications()
+repositories {
+    mavenLocal()
+    maven {
+        url = uri("https://repo.maven.apache.org/maven2/")
+    }
 }
 
-mainDependencies {
-   var javaFXVersion = "17.0.2"
-   api(ihmc.javaFXModule("base", javaFXVersion))
-   api(ihmc.javaFXModule("controls", javaFXVersion))
-   api(ihmc.javaFXModule("graphics", javaFXVersion))
-   api(ihmc.javaFXModule("fxml", javaFXVersion))
-   api(ihmc.javaFXModule("swing", javaFXVersion))
+group = "io.github.chohyojae"
+version = "21.0.1"
+description = "jfoenix"
+
+java {
+    withSourcesJar()
+    withJavadocJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
-testDependencies {
+javafx {
+    version = "21"
+    modules("javafx.controls", "javafx.graphics")
+}
+
+val exportsList = listOf(
+        "--add-exports=javafx.base/com.sun.javafx.binding=com.jfoenix",
+        "--add-exports=javafx.base/com.sun.javafx.event=com.jfoenix",
+        "--add-exports=javafx.graphics/com.sun.javafx.geom=com.jfoenix",
+        "--add-exports=javafx.graphics/com.sun.javafx.util=com.jfoenix",
+        "--add-exports=javafx.graphics/com.sun.javafx.stage=com.jfoenix",
+        "--add-exports=javafx.graphics/com.sun.javafx.scene.text=com.jfoenix",
+        "--add-exports=javafx.graphics/com.sun.javafx.scene.traversal=com.jfoenix",
+        "--add-exports=javafx.controls/com.sun.javafx.scene.control=com.jfoenix",
+        "--add-exports=javafx.controls/com.sun.javafx.scene.control.inputmap=com.jfoenix",
+        "--add-exports=javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix",
+)
+
+tasks.withType<JavaCompile>() {
+    options.encoding = "UTF-8"
+    options.compilerArgs = exportsList
 }

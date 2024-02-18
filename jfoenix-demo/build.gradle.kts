@@ -1,26 +1,34 @@
 plugins {
-   id("us.ihmc.ihmc-build")
-   id("us.ihmc.ihmc-ci") version "8.3"
-   id("us.ihmc.ihmc-cd") version "1.24"
+    java
+    application
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
-ihmc {
-   loadProductProperties("../group.gradle.properties")
-
-   configureDependencyResolution()
-   configurePublications()
+repositories {
+    mavenLocal()
+    maven {
+        url = uri("https://repo.maven.apache.org/maven2/")
+    }
 }
 
-mainDependencies {
-   api("us.ihmc:jfoenix:source")
-
-   api("javax.annotation:javax.annotation-api:1.3.2")
-   api("io.datafx:datafx:8.0.1")
-   api("io.datafx:flow:8.0.1")
-   
-    api("org.kordamp.ikonli:ikonli-javafx:2.4.0")
-    api("org.kordamp.ikonli:ikonli-fontawesome5-pack:2.4.0")
+java {
+    withSourcesJar()
+    withJavadocJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
-testDependencies {
+dependencies {
+    implementation(project(":jfoenix"))
+    implementation("io.datafx:datafx:8.0.1")
+    implementation("io.datafx:flow:8.0.1")
+
+    implementation("org.kordamp.ikonli:ikonli-javafx:2.4.0")
+    implementation("org.kordamp.ikonli:ikonli-fontawesome5-pack:2.4.0")
+}
+
+
+javafx {
+    version = "21"
+    modules("javafx.controls", "javafx.graphics", "javafx.fxml")
 }
